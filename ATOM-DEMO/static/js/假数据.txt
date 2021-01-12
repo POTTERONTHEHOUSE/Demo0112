@@ -1,0 +1,19 @@
+[LOG] Batch 0 Workload: 2 Util: 4.85
+
+[LOG] Batch 1 Workload: 4 Util: 5.2975
+
+[LOG] Batch 2 Workload: 8 Util: 7.05
+
+[LOG] Batch 3 Workload: 16 Util: 4.7975
+
+[LOG] Batch 4 Workload: 32 Util: 4.0475
+
+[LOG] Batch 5 Workload: 64 Util: 5.2475
+
+[LOG] Batch 6 Workload: 128 Util: 5.0975
+
+[LOG] Batch 7 Workload: 256 Util: 23.4
+
+[LOG] Batch 8 Workload: 512 Util: 100.2
+
+[LOG] Batch 9 Workload: 2 Util: 5.2475

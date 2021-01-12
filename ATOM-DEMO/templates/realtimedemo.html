@@ -1,0 +1,848 @@
+<html lang="en"><head>
+   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{url_for('static',filename="/images/ico/SEAS-favicon.png")}}" rel="icon" type="image/x-icon">
+
+    <title>VC-Tune @ CUHKSZ</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="{{url_for('static',filename="/css/bootstrap.min.css")}}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{url_for('static',filename="/css/main0.css")}}" rel="stylesheet">
+    <link href="{{url_for('static',filename="/css/lsm_button.css")}}" rel="stylesheet">
+    <link href="{{url_for('static',filename="/css/tooltip.css")}}" rel="stylesheet">
+    <link href="{{url_for('static',filename="/css/wasteland.css")}}" rel="stylesheet">
+
+    <!-- Custom JS 
+    <script async="" src="http://www.google-analytics.com/analytics.js"></script>-->
+    <!-- <script src="js/autoRerun.js"></script> -->
+    <script src="{{url_for('static',filename="/js/wasteland.js")}}"></script>
+    <!--I added the last one above and the following 2 for the errro $ is not defined. But I am not sure they would always work. If it fails then go to stackoverflow for other headers.--></head><body id="page-top" class="index" data-new-gr-c-s-check-loaded="14.990.0" data-gr-ext-installed="">&gt;
+   <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>-->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <!-- plotly JS -->
+    <!-- <script src="https://d3js.org/d3.v6.min.js"></script> -->
+    <!-- <script src="http://stack.gl"></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{url_for('static',filename="/js/plotly.js")}}"></script> -->
+    
+
+
+    <!-- Font Awesome -->
+    <!--<script src="https://use.fontawesome.com/3227f266ec.js"></script>-->
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Reenie+Beanie|Rock+Salt|Indie+Flower" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Source+Sans+Pro" rel="stylesheet"> -->
+   
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+    <style id="__web-inspector-hide-shortcut-style__">
+        .__web-inspector-hide-shortcut__,
+        .__web-inspector-hide-shortcut__ *,
+        .__web-inspector-hidebefore-shortcut__::before,
+        .__web-inspector-hideafter-shortcut__::after {
+            visibility: hidden !important;
+        }
+    </style>
+
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink" style="display: block; background-color: rgb(66, 143, 137);">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+                <a class="navbar-brand" href="#page-top">VC-Tune</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#overview">Overview</a>
+                    </li>
+                    <!--                     <li class="page-scroll">
+                      <a href="#research">Research</a>
+                  </li> -->
+                    <!--                     <li class="page-scroll">
+                      <a href="#people">People</a>
+                  </li> -->
+                    <li class="page-scroll active">
+                        <a href="#interactiveDemo">Environment Setting</a>
+                    </li>
+
+                    <!--                     <li class="page-scroll">
+                      <a href="#about">About</a>
+                  </li> -->
+                    <li class="page-scroll">
+                     <!--   <a href="#contact">Demonstration</a>-->
+                        <a>Demonstration</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header class="viewport" style=" margin-top: -20">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+                    <img class="img-responsive img-centered" src="{{url_for('static',filename="/images/CRDB.png")}}" alt="ATOM">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="intro-text">
+                        <span class="name">A Self-Designing Key-Value Store</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Overview -->
+    <section class="alternate" id="overview">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="fancy-title text-center">VC-Tune: <em>introduction</em></h1>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 text-center">
+
+                    <i class="fa fa-cogs fa-5x" aria-hidden="true"></i>
+                    <p class="text-center">Self-design</p>
+                </div>
+                <div class="col-sm-9">
+
+                    <!-- <p>CrimsonDB is a new <em>plug and play</em> key-value store. It offers optimal reads and writes given a memory budget and an application workload. CrimsonDB decides autonomously how to change its core design to adjust to workload, hardware and other parameters.</p> -->
+                    <p>CrimsonDB decides autonomously how to change its core design to adjust to workload, hardware and other parameters. It can assume arbitrary shapes in between the core design classes of log, LSM-tree, B-tree, and their hybrids. It offers
+                        optimal reads and writes given a memory budget and an application workload. </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 text-center">
+
+                    <i class="fa fa-tachometer fa-5x" aria-hidden="true"></i>
+                    <p class="text-center">Performance</p>
+                </div>
+                <div class="col-sm-9">
+
+                    <!-- <p>We build CrimsonDB by <em>mapping</em> the whole possible design space of key-value stores which allows us to discover key design optimizations. Through them we push read and write performance towards the optimal behavior while at the same time discover the rules that govern automation.</p> -->
+                    <p>We build CrimsonDB by mapping the whole possible design space of key-value stores. This allows us to discover new designs and optimizations. Through them we push read and write performance towards the optimal behavior, while at the
+                        same time discover the rules that govern automation.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 text-center">
+
+                    <i class="fa fa-question fa-5x" aria-hidden="true"></i>
+                    <p class="text-center">What if?</p>
+                </div>
+                <div class="col-sm-9">
+                    <!-- <p>
+                  CrimsonDB offers advanced system design exploration properties such as <em>allowing to argue about hardware properties and the potential benefit when adding new hardware</em> or <em>what kind of hardware would bring a required performance property for a given workload</em>.</p> -->
+                    <p>CrimsonDB offers advanced system design exploration features such as allowing to reason about hardware properties and the potential benefit when adding new hardware or what kind of low level system design choices would bring a required
+                        performance property for a given workload.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- <p>At its core, CrimsonDB is an LSM-tree/B-tree hybrid built in C++. The first major technical innovation of CrimsonDB is published in our SIGMOD 2017 Monkey paper which offers optimal Bloom filter allocation and a first set of what-if design and auto-tuning properties. <a href="../../monkey" taget="_blank">Click here for our interactive online tool showcasing the what-if and the autotuning capabilities of Monkey!</a> The second major technical innovation of CrimsonDB is published in our SIGMOD 2018 Dostoevsky paper which offers better trade-offs between lookup costs, merge overheads, and storage space by identifying and removing superfluous merge operations. </p>
+                  <br/>
+                  <p class="text-center">Stay tuned for more!</p> -->
+             <!--       <p>
+                        Some of the technology is published in research papers. The <a href="https://stratos.seas.harvard.edu/files/stratos/files/datacalculator.pdf" target="_blank"> Data Calculator paper in SIGMOD 2018 </a> shows how we can synthesize
+                        more data structures than stars on the sky to pick the right one for a given problem. The <a href="https://stratos.seas.harvard.edu/files/stratos/files/selfdesign.pdf" target="_blank"> Design continuums paper in CIDR 2019 </a>                        shows how we can perceive all core NoSQL data structures as a single data structure! The <a href="https://stratos.seas.harvard.edu/files/stratos/files/monkeykeyvaluestore.pdf" target="_blank"> Monkey SIGMOD 2017 </a> and <a href="https://stratos.seas.harvard.edu/files/stratos/files/monkeytods.pdf" target="_blank"> TODS 2018 </a> papers show how to pick the optimal number of bits for each bloom filter in an LSM-tree and how to pick the optimal size ratio and merge policy. The
+                        <a href="https://stratos.seas.harvard.edu/files/stratos/files/dostoevskykv.pdf" target="_blank"> Dostoevsky paper in SIGMOD 2018 </a> offers better trade-offs between lookup costs, merge overheads, and storage space by identifying
+                        and removing superfluous merge operations in NoSQL systems.
+                    </p>-->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="interactiveDemo">
+        
+        <div class="container page-scroll" style="width:2400px;">
+            <div class="transformed">
+                <div class="row">
+                    <div class="col-md-1 col-lg-1 col-xs-1"></div>
+                    <div class="col-md-2 col-lg-2 col-xs-2 ">
+                        <div class="content">
+                            <h3>Environment Setting:</h3>
+                            <p> Set the parameters for dataset, system, algorithm, the cluster size, workload, and the number of batches. After choosing, hit the button below to see it run!</p>
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                        <div class="row">
+
+                            <div class="trigger out_tab" >
+                                
+                                <div class="tab  tooltip2" id="dataset-trigger">
+                                    <div class="row">
+                                        <div class="row row1" style="display:inline-block;">
+                                        <span><img class="img-responsive img-centered" style="width:40px;display:inline-block;" src="{{url_for('static',filename="/images/Align.png")}}">
+                                            </span>
+                                        <span style="cursor: pointer; font-size: 25px; font-weight: bold;" id="data-text"> Dataset:</span> 
+                                        </div>
+                                        <div class="row2" id="datasetcontent" style="display:inline-block;">
+                                            <form role="form">
+                                                <div class="form-group rowwidth">
+                                                    <select class="form-control" id="chdataset">
+                                                        <option type="radio" name="dataset" id="dataset1" value="web" checked="">WEB</option>
+                                                        <option type="radio" name="dataset" id="dataset2" value="dblp" checked="">DBLP</option>
+                                                    </select>	
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div> 
+                                    <span class="tooltiptext_mode">Choose one from the two datasets.</span>
+                                </div>
+                            </div>
+                            
+
+                            <div class="trigger out_tab" >
+                                <div class=" tab tooltip2" id="dataset-trigger">
+                                <div class="row">
+                                <div id="sys-trigger" style="display:inline-block;">
+                                    <div class="row row1">
+                                    <span><img class="img-responsive img-centered" style="width:40px; display:inline-block;" src="{{url_for('static',filename="/images/flow.png")}}"></span>
+                                    <span style="cursor: pointer; font-size: 25px; font-weight: bold;" id="systext"> Systems:</span>
+                                    </div>
+                                </div>
+
+                                <div class="row2" id="syscontent" style="display:inline-block;">
+                                <form role="form">
+                                    <div class="form-group">
+                                        
+                                        <select class="form-control rowwidth"  onchange="switchtable(this)" id="chsys">
+                                            <option selected="selected" type="radio" name="graphd1" id="graphd12" value="pregelplus" checked=""> PREGELPLUS</option>
+                                            <option type="radio" name="graphd1" id="graphd11" value="graphd" checked="">GRAPHD</option>
+                                        </select>	
+                                    </div>
+                                </form>
+                                </div>
+                                </div>
+                                <span class="tooltiptext_mode">Choose one from the two systems.</span>
+                            </div>
+                            </div>
+            
+                            <div class="trigger out_tab">
+                                <div class="tab  tooltip2" id="dataset-trigger">
+                                <div class="row">
+                                    <div class="row row1" style="display:inline-block;">
+                                    <span><img class="img-responsive img-centered" style="width:40px;display:inline-block;" src="{{url_for('static',filename="/images/filter.png")}}">
+                                        </span>
+                                    <span style="cursor: pointer; font-size: 25px; font-weight: bold;" id="data-text"> Algorithm:</span> 
+                                    </div>
+                                    <div class="row2" id="algcontent" style="display:inline-block;">
+                                        <form role="form">
+                                            <div class="form-group ">
+                                                <select class="form-control rowwidth" id="chalg">
+                                                    <option type="radio" name="algo1" id="algo11" value="mssp" checked=""> MSSP</option>
+                                                    <option type="radio" name="algo1" id="algo12" value="ppr" checked=""> PPR</option>
+                                                </select>	
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> 
+                                <span class="tooltiptext_mode">Choose one from the two algorithms.</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                        
+                            <div class="trigger out_tab">
+                                <div class="tab  tooltip2" id="dataset-trigger">
+                                    <div class="row row1" style="display:inline-block;">
+                                    <div style="display:inline-block;"><img class="img-responsive img-centered" style="width:40px;display:inline-block;" src="{{url_for('static',filename="/images/hhh.png")}}">
+                                    </div>
+                                    <div style="display:inline-block; cursor: pointer; font-size: 25px; font-weight: bold; vertical-align:top;" id="clusize-text"> Cluster:</div>
+                                    </div> 
+                                    <div class="row2 rowwidth" style="display:inline-block;">
+                                            <form role="form">
+                                                <div class="form-group ">
+                                                    <select class="form-control" id="clusizeresult">
+                                                        <option type="radio" name="machine1" id="machine11" value="1" checked="" onchange="showclusize1()"> 1 machine</option>
+                                                        <option type="radio" name="machine1" id="machine12" value="2" checked="" onchange="showclusize1()"> 2 machines</option>
+                                                        <option type="radio" name="machine1" id="machine14" value="4" checked="" onchange="showclusize1()"> 4 machines</option>
+                                                        <option type="radio" name="machine1" id="machine18" value="8" checked="" onchange="showclusize1()"> 8 machines</option>
+                                                    
+                                                    </select>	
+                                                </div>  
+                                            </form>
+                                    </div>
+                                    <span class="tooltiptext_mode">Choose the number of machines.</span>
+                                </div>
+                            </div>
+                            <!--
+                                    <div style="display:inline-block;">
+                                        <div class="input-group rowwidth" style="left:90px" >
+                                        <input type="number" min="1" max="8" class="form-control" style="cursor: pointer; font-size: 25px; font-weight: bold;" id="clusizeresult" value="4">
+                                        <span class="input-group-addon">machine(s)</span>
+                                        </div>
+                                    </div>
+                                
+                                        <span class="tooltiptext_mode">Choose the number of machines.</span>
+                            -->
+                                
+                            
+
+                            <div class="trigger out_tab">
+                                <div class="tab  tooltip2" id="dataset-trigger">
+                                <div class="row">
+                                <div class="row1" id="wl-trigger" style="display:inline-block;left: 10px;">
+                                    <div class="row">
+                                    <span><img class="img-responsive img-centered" style="width:40px; display:inline-block;" src="{{url_for('static',filename="/images/wl.png")}}"></span>
+                                    <span style="cursor: pointer; font-size: 25px; font-weight: bold;" id="wl-text"> Workload:</span>
+                                    </div>
+                                </div>
+                            
+                                <div class="row2" id="wlcontent" style="display:inline-block;">
+                                    <label class="radio-inline">
+                                        <ul class="list-inline">
+                                            <input type="number" id="workload" class="form-control rowwidth" value="10240" onchange="checkworkload()">
+                                        </ul>
+                                    </label>
+                                </div>
+                                </div>
+                                <span class="tooltiptext_mode">Choose the workload. The workload should be no larger than 4096!</span>
+                                </div>
+                            
+                            
+                            
+                            
+                            
+                            </div>
+                            <div class="trigger out_tab">
+                                <div class="tab  tooltip2" id="dataset-trigger">
+                                    <div class="row" id="toatom" style="display: block;">
+                                        <div class="row row1" style="left: 10px;">
+                                            <div id="nob-trigger" style="display:inline-block;">
+                                                <div class="row">
+                                                <span><img class="img-responsive img-centered" style="width:40px; display:inline-block;" src="{{url_for('static',filename="/images/nob.png")}}"></span>
+                                                <span style="cursor: pointer; font-size: 25px; font-weight: bold;" id="nob-text"> Batches:</span>
+                                                </div>
+                                            </div>
+                                            <div id="atomcontent" class="row2" style="display:inline-block;left: 173px;">
+                                                <form role="form">
+                                                    <div class="form-group rowwidth">
+                                                        <select class="form-control" onchange="switchatom()" id="enatom">
+                                                            <option type="radio" name="dataset" id="at1" value="Enable" checked="">Enable ATOM</option>
+                                                            <option type="radio" name="dataset" id="at2" value="Disable" checked="">Disable ATOM</option>
+                                                        </select>	
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <span class="tooltiptext_mode">Choose the number of batches! Enable VC-Tune and run our automatic program or input batch number manually.</span>
+                                    </div>
+
+                                    <div class="row spinicon" id="tomanual" style="display: none;">
+                                        <div class="row row1" style="left: 10px;">
+                                            <div id="nob-trigger" style="display:inline-block;">
+                                                <div class="row">
+                                                    <span><img class="img-responsive img-centered" onclick="switchmanual()" style="width:40px; display:inline-block;" src="{{url_for('static',filename="/images/nob.png")}}"></span>
+                                                    <span style="cursor: pointer; font-size: 25px; font-weight: bold;" id="nob-text"> Batches:</span>
+                                                </div>
+                                            </div>
+                                            <div class="row2" id="manuatom" style="display:inline-block;left: 173px;">
+                                                <input type="number" min="1" id="userbatchnumber" class="form-control rowwidth" value="10" onchange="checkbatchnumber()">
+                                            </div>  
+                                        </div>
+                                        <span class="tooltiptext_mode">Input the number of batches manually! Click the icon and you can switch back to ATOM!</span>
+                                    </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="buttonlong button4" onclick="rockit()">Click Here and Run!</button>
+                    </div>
+                    </div> 
+                </div>
+           </div>
+           
+       <div class="divider"></div>
+       <div class="transformed">
+            <div class="row">
+                <div class="col-md-1 col-lg-1 col-xs-1"></div>
+                <div class="col-md-2 col-lg-2 col-xs-2 ">
+                    <div class="content">
+                        <h3>Results from Training and Testing:</h3>
+                        <p> Here we show metrics from the training and evaluationg phases corresponding to the above environment parameter setting.</p>
+                    
+                        </ul>
+                    </div>
+
+            
+                </div>
+                
+                <div class="col-md-9 col-lg-9 col-xs-9">
+                    <div class="row" >
+                    <div id="training_table">
+                            
+                                    <table class="table-fill" id="result-table11" style="display: table;">
+                                        
+                                    <caption>Training Phase</caption>
+                                        <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">State</th>
+                                            <th scope="col">Workload</th>
+                                            <th scope="col">I/O util%</th>
+                                            <th scope="col">Time Cost</th>
+                                        <th scope="col">Accumulated Time Cost</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody id="table-body_graphd_tra">
+                                        </tbody>
+                                    </table>
+                                    
+            
+                                    <table class="table-fill" id="result-table12" style=" display: none;">
+                                        
+                                    <caption>Training Phase</caption>
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">State</th>
+                                        <th scope="col">Workload</th>
+                                        <th scope="col">RAM HWM</th>
+                                        <th scope="col">RAM RSS</th>
+                                        <th scope="col">Time Cost</th>
+                                        <th scope="col">Accumulated Time Cost</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody id="table-body_pregelplus_tra">
+                                    </tbody>
+                                </table>
+                                
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div id="evaluation_table">
+                                
+                                    
+                                <table class="table-fill" id="result-table21" style=" display: table;">
+                                    
+                                <caption>Evaluation Phase</caption>
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">State</th>
+                                        <th scope="col">Workload</th>
+                                        <th scope="col">I/O util%</th>
+                                        <th scope="col">Time Cost</th>
+                                        <th scope="col">Accumulated Time Cost</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody id="table-body_graphd_eval">
+                                    </tbody>
+                                </table>
+                                
+                                
+                                <table class="table-fill" id="result-table22" style=" display: none;">
+                                    
+                                <caption>Evaluation Phase</caption>
+                                <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">State</th>
+                                    <th scope="col">Workload</th>
+                                    <th scope="col">RAM HWM</th>
+                                    <th scope="col">RAM RSS</th>      
+                                    <th scope="col">Time Cost</th>
+                                    <th scope="col">Accumulated Time Cost</th>
+
+                                </tr>
+                                </thead>
+                                <tbody id="table-body_pregelplus_eval">
+                                </tbody>
+                            </table>
+                                
+                        </div>
+                    </div>
+
+
+                    </div>
+                    
+                    <!-- <div class="col-md-9 col-lg-9 col-xs-9">
+                        <div class="row" >
+                        <div id="training_table">
+                                
+                                        <table class="table-fill" id="result-table11" style="display: table;">
+                                            
+                                                <caption>Training Phase</caption>
+                                            <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">State</th>
+                                                <th scope="col">Workload</th>
+                                                <th scope="col">I/O util%</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch1</th>
+                                                <th scope="col">16</th>
+                                                <th scope="col">4.85</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch2</th>
+                                                <th scope="col">32</th>
+                                                <th scope="col">5.2975</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch3</th>
+                                                <th scope="col">64</th>
+                                                <th scope="col">7.05</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch4</th>
+                                                <th scope="col">128</th>
+                                                <th scope="col">4.7975</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch5</th>
+                                                <th scope="col">256</th>
+                                                <th scope="col">4.0475</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch6</th>
+                                                <th scope="col">512</th>
+                                                <th scope="col">5.2475</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch7</th>
+                                                <th scope="col">1024</th>
+                                                <th scope="col">5.0975</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch8</th>
+                                                <th scope="col">2048</th>
+                                                <th scope="col">23.4</th>
+                                            </tr>
+
+                                            </thead>
+                                            <tbody id="table-body_graphd_tra">
+                                            </tbody>
+                                        </table>
+                                        
+                
+                                        <table class="table-fill" id="result-table12" style="display: none;">
+                                            
+                                            <caption>Training Phase</caption>
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">State</th>
+                                                <th scope="col">Workload</th>
+                                                <th scope="col">maxHWM</th>
+                                                <th scope="col">maxRSS</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch1</th>
+                                                <th scope="col">32</th>
+                                                <th scope="col">131566</th>
+                                                <th scope="col">125213</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch2</th>
+                                                <th scope="col">64</th>
+                                                <th scope="col">214379</th>
+                                                <th scope="col">196790</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch3</th>
+                                                <th scope="col">128</th>
+                                                <th scope="col">383154</th>
+                                                <th scope="col">320201</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch4</th>
+                                                <th scope="col">256</th>
+                                                <th scope="col">682624</th>
+                                                <th scope="col">464078</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch5</th>
+                                                <th scope="col">512</th>
+                                                <th scope="col">1152704</th>
+                                                <th scope="col">745627</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch6</th>
+                                                <th scope="col">1024</th>
+                                                <th scope="col">2064403</th>
+                                                <th scope="col">1225367</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch7</th>
+                                                <th scope="col">2048</th>
+                                                <th scope="col">3984616</th>
+                                                <th scope="col">2070943</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table-body_pregelplus_tra">
+                                        </tbody>
+                                    </table>
+                                    
+                            </div> 
+            
+            
+                        </div>
+            
+                        <div class="row">
+                            <div id="evaluation_table">
+                                    
+                                        
+                                    <table class="table-fill" id="result-table21" style="display: table;">
+                                        
+                                            <caption>Evaluation Phase</caption>
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">State</th>
+                                                <th scope="col">Workload</th>
+                                                <th scope="col">I/O util%</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch7</th>
+                                                <th scope="col">4096</th>
+                                                <th scope="col">100.2</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">Batch8</th>
+                                                <th scope="col">16</th>
+                                                <th scope="col">5.2475</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table-body_graphd_eval">
+                                        </tbody>
+                                    </table>
+                                    
+                                    
+                                    <table class="table-fill" id="result-table22" style="display: none;">
+                                        
+                                        <caption>Evaluation Phase</caption>
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">State</th>
+                                            <th scope="col">Workload</th>
+                                            <th scope="col">maxHWM</th>
+                                            <th scope="col">maxRSS</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Batch7</th>
+                                            <th scope="col">7755</th>
+                                            <th scope="col">14654785</th>
+                                            <th scope="col">7058935</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Batch8</th>
+                                            <th scope="col">2485</th>
+                                            <th scope="col">14654785</th>
+                                            <th scope="col">8124202</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table-body_pregelplus_eval">
+                                    </tbody>
+                                </table>
+                                    
+                            </div>
+                        </div>
+            
+            
+                        </div>-->
+
+                
+
+
+
+            
+
+
+                <hr>
+
+            </div>
+       </div>
+
+
+    </section>
+    
+
+
+    
+    <!-- Footer 
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <a id="seas-link" href="http://seas.harvard.edu" target="_blank" title="Harvard SEAS">Harvard SEAS</a>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <a id="harvard-link" href="http://www.harvard.edu" target="_blank" title="Harvard University">Harvard University</a>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <a id="daslab-link" href="http://daslab.seas.harvard.edu" target="_blank" title="Harvard DASlab">Harvard DASlab</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright © 2016 – 2020 Harvard DASlab. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>-->
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top" style="display: none;">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-56717122-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics Script -->
+
+    <!-- jQuery -->
+    <script src="{{url_for('static',filename="/js/jquery.js")}}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{url_for('static',filename="/js/bootstrap.min.js")}}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{{url_for('static',filename="/js/classie.js")}}"></script>
+    <script src="{{url_for('static',filename="/js/cbpAnimatedHeader.js")}}"></script>
+  <!--  <script src="js/lambertw.js"></script>-->
+
+    <!-- Contact Form JavaScript -->
+    <script src="{{url_for('static',filename="/js/jqBootstrapValidation.js")}}"></script>
+    <!-- <script src="js/contact_me.js"></script> -->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{url_for('static',filename="/js/main.js")}}"></script>
+   <!-- <script src="js/show_more.js"></script> 
+    <script>
+        setTimeout(init, 200);
+    </script>-->
+
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{url_for('static',filename="/js/disappearMenu.js")}}"></script>
+
+    <script>
+        // self executing function here
+        (function() {
+           // your page initialization code here
+           // the DOM will be available here
+           $('#dataset1').focus();
+           $('#graphd12').focus();
+           $('#algo11').focus();
+           $('#machine11').focus();
+           $('#workload').focus();
+           $('#at1').focus();
+        
+        })();
+        </script>
+    <!-- Start of StatCounter Code for Default Guide 这里
+    <script type="text/javascript">
+        var sc_project = 10118992;
+        var sc_invisible = 1;
+        var sc_security = "3f8a8e7c";
+        var scJsHost = (("https:" == document.location.protocol) ?
+            "https://secure." : "http://www.");
+        document.write("<sc" + "ript type='text/javascript' src='" +
+            scJsHost +
+            "statcounter.com/counter/counter.js'></" + "script>");
+    </script><script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script><script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+    -->
+    <!--<script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>-->
+    <noscript>
+   <div class="statcounter">
+    <a href="http://statcounter.com/shopify/" target="_blank" title="shopify visitor statistics">
+     <img alt="shopify visitor statistics" class="statcounter" src="http://c.statcounter.com/10118992/0/3f8a8e7c/1/">
+    </a>
+   </div>
+  </noscript>
+    <!-- End of StatCounter Code for Default Guide -->
+
+
+
+
+    <span style="border-radius: 10px !important; text-indent: 12px !important; width: auto !important; height: 20px !important; padding: 0px 8px !important; text-align: center !important; vertical-align: middle !important; font: bold 11px / 20px &quot;Helvetica Neue&quot;, Helvetica, sans-serif !important; color: rgb(255, 255, 255) !important; background: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNiIgY3k9IjYiIHI9IjYiIGZpbGw9IiNFNjAwMjMiPjwvY2lyY2xlPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNkMwIDguNTYxNSAxLjYwNTUgMTAuNzQ4NSAzLjg2NSAxMS42MDlDMy44MSAxMS4xNDA1IDMuNzUxNSAxMC4zNjggMy44Nzc1IDkuODI2QzMuOTg2IDkuMzYgNC41NzggNi44NTcgNC41NzggNi44NTdDNC41NzggNi44NTcgNC4zOTk1IDYuNDk5NSA0LjM5OTUgNS45N0M0LjM5OTUgNS4xNCA0Ljg4MDUgNC41MiA1LjQ4IDQuNTJDNS45OSA0LjUyIDYuMjM2IDQuOTAyNSA2LjIzNiA1LjM2MUM2LjIzNiA1Ljg3MzUgNS45MDk1IDYuNjM5NSA1Ljc0MSA3LjM1QzUuNjAwNSA3Ljk0NDUgNi4wMzk1IDguNDI5NSA2LjYyNTUgOC40Mjk1QzcuNjg3IDguNDI5NSA4LjUwMzUgNy4zMSA4LjUwMzUgNS42OTRDOC41MDM1IDQuMjYzNSA3LjQ3NTUgMy4yNjQgNi4wMDggMy4yNjRDNC4zMDkgMy4yNjQgMy4zMTE1IDQuNTM4NSAzLjMxMTUgNS44NTZDMy4zMTE1IDYuMzY5NSAzLjUwOSA2LjkxOTUgMy43NTYgNy4yMTlDMy44MDQ1IDcuMjc4NSAzLjgxMiA3LjMzIDMuNzk3NSA3LjM5MDVDMy43NTIgNy41Nzk1IDMuNjUxIDcuOTg1IDMuNjMxNSA4LjA2OEMzLjYwNSA4LjE3NyAzLjU0NSA4LjIwMDUgMy40MzE1IDguMTQ3NUMyLjY4NTUgNy44MDA1IDIuMjE5NSA2LjcxIDIuMjE5NSA1LjgzNEMyLjIxOTUgMy45NDk1IDMuNTg4IDIuMjE5NSA2LjE2NTUgMi4yMTk1QzguMjM3NSAyLjIxOTUgOS44NDggMy42OTYgOS44NDggNS42NjlDOS44NDggNy43Mjc1IDguNTUwNSA5LjM4NDUgNi43NDg1IDkuMzg0NUM2LjE0MyA5LjM4NDUgNS41NzQ1IDkuMDY5NSA1LjM3OTUgOC42OThDNS4zNzk1IDguNjk4IDUuMDggOS44MzkgNS4wMDc1IDEwLjExOEM0Ljg2NjUgMTAuNjYgNC40NzU1IDExLjM0NiA0LjIzMyAxMS43MzU1QzQuNzkyIDExLjkwNzUgNS4zODUgMTIgNiAxMkM5LjMxMzUgMTIgMTIgOS4zMTM1IDEyIDZDMTIgMi42ODY1IDkuMzEzNSAwIDYgMEMyLjY4NjUgMCAwIDIuNjg2NSAwIDZaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 4px 50% / 12px 12px no-repeat rgb(230, 0, 35) !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: none !important; -webkit-font-smoothing: antialiased !important; top: 209.987px; left: 692.181px;">Save</span>
+    <span style="border-radius: 12px; width: 24px !important; height: 24px !important; background: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMiAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iMTEiIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuOCI+PC9jaXJjbGU+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuMDgzNCA0LjU4MzMzSDEzLjMzMzRWNS43NDk5OUgxNS4wODM0QzE1LjcyNjggNS43NDk5OSAxNi4yNSA2LjI3MzI0IDE2LjI1IDYuOTE2NjZWOC42NjY2NkgxNy40MTY3VjYuOTE2NjZDMTcuNDE2NyA1LjYyOTgzIDE2LjM3MDIgNC41ODMzMyAxNS4wODM0IDQuNTgzMzNaTTE2LjI1IDE1LjA4MzNDMTYuMjUgMTUuNzI2NyAxNS43MjY4IDE2LjI1IDE1LjA4MzQgMTYuMjVIMTMuMzMzNFYxNy40MTY3SDE1LjA4MzRDMTYuMzcwMiAxNy40MTY3IDE3LjQxNjcgMTYuMzcwMiAxNy40MTY3IDE1LjA4MzNWMTMuMzMzM0gxNi4yNVYxNS4wODMzWk01Ljc1MDA0IDE1LjA4MzNWMTMuMzMzM0g0LjU4MzM3VjE1LjA4MzNDNC41ODMzNyAxNi4zNzAyIDUuNjI5ODcgMTcuNDE2NyA2LjkxNjcxIDE3LjQxNjdIOC42NjY3MVYxNi4yNUg2LjkxNjcxQzYuMjczMjkgMTYuMjUgNS43NTAwNCAxNS43MjY3IDUuNzUwMDQgMTUuMDgzM1pNNS43NTAwNCA2LjkxNjY2QzUuNzUwMDQgNi4yNzMyNCA2LjI3MzI5IDUuNzQ5OTkgNi45MTY3MSA1Ljc0OTk5SDguNjY2NzFWNC41ODMzM0g2LjkxNjcxQzUuNjI5ODcgNC41ODMzMyA0LjU4MzM3IDUuNjI5ODMgNC41ODMzNyA2LjkxNjY2VjguNjY2NjZINS43NTAwNFY2LjkxNjY2Wk05LjI1MDA0IDEwLjcwODNDOS4yNTAwNCA5LjkwNDQ5IDkuOTA0NTQgOS4yNDk5OSAxMC43MDg0IDkuMjQ5OTlDMTEuNTEyMiA5LjI0OTk5IDEyLjE2NjcgOS45MDQ0OSAxMi4xNjY3IDEwLjcwODNDMTIuMTY2NyAxMS41MTIyIDExLjUxMjIgMTIuMTY2NyAxMC43MDg0IDEyLjE2NjdDOS45MDQ1NCAxMi4xNjY3IDkuMjUwMDQgMTEuNTEyMiA5LjI1MDA0IDEwLjcwODNaTTEzLjYyNSAxNC41QzEzLjg0OSAxNC41IDE0LjA3MyAxNC40MTQ4IDE0LjI0NCAxNC4yNDM5QzE0LjU4NTIgMTMuOTAyMSAxNC41ODUyIDEzLjM0NzkgMTQuMjQ0IDEzLjAwNjFMMTMuMDcwMyAxMS44MzNDMTMuMjM0MiAxMS40OTA2IDEzLjMzMzQgMTEuMTEyNiAxMy4zMzM0IDEwLjcwODNDMTMuMzMzNCA5LjI2MTA4IDEyLjE1NTYgOC4wODMzMyAxMC43MDg0IDguMDgzMzNDOS4yNjExMiA4LjA4MzMzIDguMDgzMzcgOS4yNjEwOCA4LjA4MzM3IDEwLjcwODNDOC4wODMzNyAxMi4xNTU2IDkuMjYxMTIgMTMuMzMzMyAxMC43MDg0IDEzLjMzMzNDMTEuMTEyNiAxMy4zMzMzIDExLjQ5MDYgMTMuMjM0MiAxMS44MzMgMTMuMDcwMkwxMy4wMDYxIDE0LjI0MzlDMTMuMTc3IDE0LjQxNDggMTMuNDAxIDE0LjUgMTMuNjI1IDE0LjVaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 50% 50% / 24px 24px no-repeat rgba(0, 0, 0, 0.4) !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: none !important; top: 209.987px; left: 1010.16px;"></span><span style="border-radius: 10px !important; text-indent: 12px !important; width: auto !important; height: 20px !important; padding: 0px 8px !important; text-align: center !important; vertical-align: middle !important; font: bold 11px / 20px &quot;Helvetica Neue&quot;, Helvetica, sans-serif !important; color: rgb(255, 255, 255) !important; background: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNiIgY3k9IjYiIHI9IjYiIGZpbGw9IiNFNjAwMjMiPjwvY2lyY2xlPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNkMwIDguNTYxNSAxLjYwNTUgMTAuNzQ4NSAzLjg2NSAxMS42MDlDMy44MSAxMS4xNDA1IDMuNzUxNSAxMC4zNjggMy44Nzc1IDkuODI2QzMuOTg2IDkuMzYgNC41NzggNi44NTcgNC41NzggNi44NTdDNC41NzggNi44NTcgNC4zOTk1IDYuNDk5NSA0LjM5OTUgNS45N0M0LjM5OTUgNS4xNCA0Ljg4MDUgNC41MiA1LjQ4IDQuNTJDNS45OSA0LjUyIDYuMjM2IDQuOTAyNSA2LjIzNiA1LjM2MUM2LjIzNiA1Ljg3MzUgNS45MDk1IDYuNjM5NSA1Ljc0MSA3LjM1QzUuNjAwNSA3Ljk0NDUgNi4wMzk1IDguNDI5NSA2LjYyNTUgOC40Mjk1QzcuNjg3IDguNDI5NSA4LjUwMzUgNy4zMSA4LjUwMzUgNS42OTRDOC41MDM1IDQuMjYzNSA3LjQ3NTUgMy4yNjQgNi4wMDggMy4yNjRDNC4zMDkgMy4yNjQgMy4zMTE1IDQuNTM4NSAzLjMxMTUgNS44NTZDMy4zMTE1IDYuMzY5NSAzLjUwOSA2LjkxOTUgMy43NTYgNy4yMTlDMy44MDQ1IDcuMjc4NSAzLjgxMiA3LjMzIDMuNzk3NSA3LjM5MDVDMy43NTIgNy41Nzk1IDMuNjUxIDcuOTg1IDMuNjMxNSA4LjA2OEMzLjYwNSA4LjE3NyAzLjU0NSA4LjIwMDUgMy40MzE1IDguMTQ3NUMyLjY4NTUgNy44MDA1IDIuMjE5NSA2LjcxIDIuMjE5NSA1LjgzNEMyLjIxOTUgMy45NDk1IDMuNTg4IDIuMjE5NSA2LjE2NTUgMi4yMTk1QzguMjM3NSAyLjIxOTUgOS44NDggMy42OTYgOS44NDggNS42NjlDOS44NDggNy43Mjc1IDguNTUwNSA5LjM4NDUgNi43NDg1IDkuMzg0NUM2LjE0MyA5LjM4NDUgNS41NzQ1IDkuMDY5NSA1LjM3OTUgOC42OThDNS4zNzk1IDguNjk4IDUuMDggOS44MzkgNS4wMDc1IDEwLjExOEM0Ljg2NjUgMTAuNjYgNC40NzU1IDExLjM0NiA0LjIzMyAxMS43MzU1QzQuNzkyIDExLjkwNzUgNS4zODUgMTIgNiAxMkM5LjMxMzUgMTIgMTIgOS4zMTM1IDEyIDZDMTIgMi42ODY1IDkuMzEzNSAwIDYgMEMyLjY4NjUgMCAwIDIuNjg2NSAwIDZaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 4px 50% / 12px 12px no-repeat rgb(230, 0, 35) !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: none !important; -webkit-font-smoothing: antialiased !important; top: 210px; left: 1349.2px;">Save</span>
+        <span style="border-radius: 12px; width: 24px !important; height: 24px !important; background: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMiAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iMTEiIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuOCI+PC9jaXJjbGU+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuMDgzNCA0LjU4MzMzSDEzLjMzMzRWNS43NDk5OUgxNS4wODM0QzE1LjcyNjggNS43NDk5OSAxNi4yNSA2LjI3MzI0IDE2LjI1IDYuOTE2NjZWOC42NjY2NkgxNy40MTY3VjYuOTE2NjZDMTcuNDE2NyA1LjYyOTgzIDE2LjM3MDIgNC41ODMzMyAxNS4wODM0IDQuNTgzMzNaTTE2LjI1IDE1LjA4MzNDMTYuMjUgMTUuNzI2NyAxNS43MjY4IDE2LjI1IDE1LjA4MzQgMTYuMjVIMTMuMzMzNFYxNy40MTY3SDE1LjA4MzRDMTYuMzcwMiAxNy40MTY3IDE3LjQxNjcgMTYuMzcwMiAxNy40MTY3IDE1LjA4MzNWMTMuMzMzM0gxNi4yNVYxNS4wODMzWk01Ljc1MDA0IDE1LjA4MzNWMTMuMzMzM0g0LjU4MzM3VjE1LjA4MzNDNC41ODMzNyAxNi4zNzAyIDUuNjI5ODcgMTcuNDE2NyA2LjkxNjcxIDE3LjQxNjdIOC42NjY3MVYxNi4yNUg2LjkxNjcxQzYuMjczMjkgMTYuMjUgNS43NTAwNCAxNS43MjY3IDUuNzUwMDQgMTUuMDgzM1pNNS43NTAwNCA2LjkxNjY2QzUuNzUwMDQgNi4yNzMyNCA2LjI3MzI5IDUuNzQ5OTkgNi45MTY3MSA1Ljc0OTk5SDguNjY2NzFWNC41ODMzM0g2LjkxNjcxQzUuNjI5ODcgNC41ODMzMyA0LjU4MzM3IDUuNjI5ODMgNC41ODMzNyA2LjkxNjY2VjguNjY2NjZINS43NTAwNFY2LjkxNjY2Wk05LjI1MDA0IDEwLjcwODNDOS4yNTAwNCA5LjkwNDQ5IDkuOTA0NTQgOS4yNDk5OSAxMC43MDg0IDkuMjQ5OTlDMTEuNTEyMiA5LjI0OTk5IDEyLjE2NjcgOS45MDQ0OSAxMi4xNjY3IDEwLjcwODNDMTIuMTY2NyAxMS41MTIyIDExLjUxMjIgMTIuMTY2NyAxMC43MDg0IDEyLjE2NjdDOS45MDQ1NCAxMi4xNjY3IDkuMjUwMDQgMTEuNTEyMiA5LjI1MDA0IDEwLjcwODNaTTEzLjYyNSAxNC41QzEzLjg0OSAxNC41IDE0LjA3MyAxNC40MTQ4IDE0LjI0NCAxNC4yNDM5QzE0LjU4NTIgMTMuOTAyMSAxNC41ODUyIDEzLjM0NzkgMTQuMjQ0IDEzLjAwNjFMMTMuMDcwMyAxMS44MzNDMTMuMjM0MiAxMS40OTA2IDEzLjMzMzQgMTEuMTEyNiAxMy4zMzM0IDEwLjcwODNDMTMuMzMzNCA5LjI2MTA4IDEyLjE1NTYgOC4wODMzMyAxMC43MDg0IDguMDgzMzNDOS4yNjExMiA4LjA4MzMzIDguMDgzMzcgOS4yNjEwOCA4LjA4MzM3IDEwLjcwODNDOC4wODMzNyAxMi4xNTU2IDkuMjYxMTIgMTMuMzMzMyAxMC43MDg0IDEzLjMzMzNDMTEuMTEyNiAxMy4zMzMzIDExLjQ5MDYgMTMuMjM0MiAxMS44MzMgMTMuMDcwMkwxMy4wMDYxIDE0LjI0MzlDMTMuMTc3IDE0LjQxNDggMTMuNDAxIDE0LjUgMTMuNjI1IDE0LjVaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 50% 50% / 24px 24px no-repeat rgba(0, 0, 0, 0.4) !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: none !important; top: 210px; left: 1667.2px;"></span><span style="border-radius: 10px !important; text-indent: 12px !important; width: auto !important; height: 20px !important; padding: 0px 8px !important; text-align: center !important; vertical-align: middle !important; font: bold 11px / 20px &quot;Helvetica Neue&quot;, Helvetica, sans-serif !important; color: rgb(255, 255, 255) !important; background: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNiIgY3k9IjYiIHI9IjYiIGZpbGw9IiNFNjAwMjMiPjwvY2lyY2xlPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNkMwIDguNTYxNSAxLjYwNTUgMTAuNzQ4NSAzLjg2NSAxMS42MDlDMy44MSAxMS4xNDA1IDMuNzUxNSAxMC4zNjggMy44Nzc1IDkuODI2QzMuOTg2IDkuMzYgNC41NzggNi44NTcgNC41NzggNi44NTdDNC41NzggNi44NTcgNC4zOTk1IDYuNDk5NSA0LjM5OTUgNS45N0M0LjM5OTUgNS4xNCA0Ljg4MDUgNC41MiA1LjQ4IDQuNTJDNS45OSA0LjUyIDYuMjM2IDQuOTAyNSA2LjIzNiA1LjM2MUM2LjIzNiA1Ljg3MzUgNS45MDk1IDYuNjM5NSA1Ljc0MSA3LjM1QzUuNjAwNSA3Ljk0NDUgNi4wMzk1IDguNDI5NSA2LjYyNTUgOC40Mjk1QzcuNjg3IDguNDI5NSA4LjUwMzUgNy4zMSA4LjUwMzUgNS42OTRDOC41MDM1IDQuMjYzNSA3LjQ3NTUgMy4yNjQgNi4wMDggMy4yNjRDNC4zMDkgMy4yNjQgMy4zMTE1IDQuNTM4NSAzLjMxMTUgNS44NTZDMy4zMTE1IDYuMzY5NSAzLjUwOSA2LjkxOTUgMy43NTYgNy4yMTlDMy44MDQ1IDcuMjc4NSAzLjgxMiA3LjMzIDMuNzk3NSA3LjM5MDVDMy43NTIgNy41Nzk1IDMuNjUxIDcuOTg1IDMuNjMxNSA4LjA2OEMzLjYwNSA4LjE3NyAzLjU0NSA4LjIwMDUgMy40MzE1IDguMTQ3NUMyLjY4NTUgNy44MDA1IDIuMjE5NSA2LjcxIDIuMjE5NSA1LjgzNEMyLjIxOTUgMy45NDk1IDMuNTg4IDIuMjE5NSA2LjE2NTUgMi4yMTk1QzguMjM3NSAyLjIxOTUgOS44NDggMy42OTYgOS44NDggNS42NjlDOS44NDggNy43Mjc1IDguNTUwNSA5LjM4NDUgNi43NDg1IDkuMzg0NUM2LjE0MyA5LjM4NDUgNS41NzQ1IDkuMDY5NSA1LjM3OTUgOC42OThDNS4zNzk1IDguNjk4IDUuMDggOS44MzkgNS4wMDc1IDEwLjExOEM0Ljg2NjUgMTAuNjYgNC40NzU1IDExLjM0NiA0LjIzMyAxMS43MzU1QzQuNzkyIDExLjkwNzUgNS4zODUgMTIgNiAxMkM5LjMxMzUgMTIgMTIgOS4zMTM1IDEyIDZDMTIgMi42ODY1IDkuMzEzNSAwIDYgMEMyLjY4NjUgMCAwIDIuNjg2NSAwIDZaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 4px 50% / 12px 12px no-repeat rgb(230, 0, 35) !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: none !important; -webkit-font-smoothing: antialiased !important; top: 209.987px; left: 969.381px;">Save</span>
+            <span style="border-radius: 12px; width: 24px !important; height: 24px !important; background: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMiAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iMTEiIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuOCI+PC9jaXJjbGU+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuMDgzNCA0LjU4MzMzSDEzLjMzMzRWNS43NDk5OUgxNS4wODM0QzE1LjcyNjggNS43NDk5OSAxNi4yNSA2LjI3MzI0IDE2LjI1IDYuOTE2NjZWOC42NjY2NkgxNy40MTY3VjYuOTE2NjZDMTcuNDE2NyA1LjYyOTgzIDE2LjM3MDIgNC41ODMzMyAxNS4wODM0IDQuNTgzMzNaTTE2LjI1IDE1LjA4MzNDMTYuMjUgMTUuNzI2NyAxNS43MjY4IDE2LjI1IDE1LjA4MzQgMTYuMjVIMTMuMzMzNFYxNy40MTY3SDE1LjA4MzRDMTYuMzcwMiAxNy40MTY3IDE3LjQxNjcgMTYuMzcwMiAxNy40MTY3IDE1LjA4MzNWMTMuMzMzM0gxNi4yNVYxNS4wODMzWk01Ljc1MDA0IDE1LjA4MzNWMTMuMzMzM0g0LjU4MzM3VjE1LjA4MzNDNC41ODMzNyAxNi4zNzAyIDUuNjI5ODcgMTcuNDE2NyA2LjkxNjcxIDE3LjQxNjdIOC42NjY3MVYxNi4yNUg2LjkxNjcxQzYuMjczMjkgMTYuMjUgNS43NTAwNCAxNS43MjY3IDUuNzUwMDQgMTUuMDgzM1pNNS43NTAwNCA2LjkxNjY2QzUuNzUwMDQgNi4yNzMyNCA2LjI3MzI5IDUuNzQ5OTkgNi45MTY3MSA1Ljc0OTk5SDguNjY2NzFWNC41ODMzM0g2LjkxNjcxQzUuNjI5ODcgNC41ODMzMyA0LjU4MzM3IDUuNjI5ODMgNC41ODMzNyA2LjkxNjY2VjguNjY2NjZINS43NTAwNFY2LjkxNjY2Wk05LjI1MDA0IDEwLjcwODNDOS4yNTAwNCA5LjkwNDQ5IDkuOTA0NTQgOS4yNDk5OSAxMC43MDg0IDkuMjQ5OTlDMTEuNTEyMiA5LjI0OTk5IDEyLjE2NjcgOS45MDQ0OSAxMi4xNjY3IDEwLjcwODNDMTIuMTY2NyAxMS41MTIyIDExLjUxMjIgMTIuMTY2NyAxMC43MDg0IDEyLjE2NjdDOS45MDQ1NCAxMi4xNjY3IDkuMjUwMDQgMTEuNTEyMiA5LjI1MDA0IDEwLjcwODNaTTEzLjYyNSAxNC41QzEzLjg0OSAxNC41IDE0LjA3MyAxNC40MTQ4IDE0LjI0NCAxNC4yNDM5QzE0LjU4NTIgMTMuOTAyMSAxNC41ODUyIDEzLjM0NzkgMTQuMjQ0IDEzLjAwNjFMMTMuMDcwMyAxMS44MzNDMTMuMjM0MiAxMS40OTA2IDEzLjMzMzQgMTEuMTEyNiAxMy4zMzM0IDEwLjcwODNDMTMuMzMzNCA5LjI2MTA4IDEyLjE1NTYgOC4wODMzMyAxMC43MDg0IDguMDgzMzNDOS4yNjExMiA4LjA4MzMzIDguMDgzMzcgOS4yNjEwOCA4LjA4MzM3IDEwLjcwODNDOC4wODMzNyAxMi4xNTU2IDkuMjYxMTIgMTMuMzMzMyAxMC43MDg0IDEzLjMzMzNDMTEuMTEyNiAxMy4zMzMzIDExLjQ5MDYgMTMuMjM0MiAxMS44MzMgMTMuMDcwMkwxMy4wMDYxIDE0LjI0MzlDMTMuMTc3IDE0LjQxNDggMTMuNDAxIDE0LjUgMTMuNjI1IDE0LjVaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 50% 50% / 24px 24px no-repeat rgba(0, 0, 0, 0.4) !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: none !important; top: 209.987px; left: 1287.36px;"></span>
+
+
+<span style="border-radius: 10px !important; text-indent: 12px !important; width: auto !important; height: 20px !important; padding: 0px 8px !important; text-align: center !important; vertical-align: middle !important; font: bold 11px / 20px &quot;Helvetica Neue&quot;, Helvetica, sans-serif !important; color: rgb(255, 255, 255) !important; background: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNiIgY3k9IjYiIHI9IjYiIGZpbGw9IiNFNjAwMjMiPjwvY2lyY2xlPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNkMwIDguNTYxNSAxLjYwNTUgMTAuNzQ4NSAzLjg2NSAxMS42MDlDMy44MSAxMS4xNDA1IDMuNzUxNSAxMC4zNjggMy44Nzc1IDkuODI2QzMuOTg2IDkuMzYgNC41NzggNi44NTcgNC41NzggNi44NTdDNC41NzggNi44NTcgNC4zOTk1IDYuNDk5NSA0LjM5OTUgNS45N0M0LjM5OTUgNS4xNCA0Ljg4MDUgNC41MiA1LjQ4IDQuNTJDNS45OSA0LjUyIDYuMjM2IDQuOTAyNSA2LjIzNiA1LjM2MUM2LjIzNiA1Ljg3MzUgNS45MDk1IDYuNjM5NSA1Ljc0MSA3LjM1QzUuNjAwNSA3Ljk0NDUgNi4wMzk1IDguNDI5NSA2LjYyNTUgOC40Mjk1QzcuNjg3IDguNDI5NSA4LjUwMzUgNy4zMSA4LjUwMzUgNS42OTRDOC41MDM1IDQuMjYzNSA3LjQ3NTUgMy4yNjQgNi4wMDggMy4yNjRDNC4zMDkgMy4yNjQgMy4zMTE1IDQuNTM4NSAzLjMxMTUgNS44NTZDMy4zMTE1IDYuMzY5NSAzLjUwOSA2LjkxOTUgMy43NTYgNy4yMTlDMy44MDQ1IDcuMjc4NSAzLjgxMiA3LjMzIDMuNzk3NSA3LjM5MDVDMy43NTIgNy41Nzk1IDMuNjUxIDcuOTg1IDMuNjMxNSA4LjA2OEMzLjYwNSA4LjE3NyAzLjU0NSA4LjIwMDUgMy40MzE1IDguMTQ3NUMyLjY4NTUgNy44MDA1IDIuMjE5NSA2LjcxIDIuMjE5NSA1LjgzNEMyLjIxOTUgMy45NDk1IDMuNTg4IDIuMjE5NSA2LjE2NTUgMi4yMTk1QzguMjM3NSAyLjIxOTUgOS44NDggMy42OTYgOS44NDggNS42NjlDOS44NDggNy43Mjc1IDguNTUwNSA5LjM4NDUgNi43NDg1IDkuMzg0NUM2LjE0MyA5LjM4NDUgNS41NzQ1IDkuMDY5NSA1LjM3OTUgOC42OThDNS4zNzk1IDguNjk4IDUuMDggOS44MzkgNS4wMDc1IDEwLjExOEM0Ljg2NjUgMTAuNjYgNC40NzU1IDExLjM0NiA0LjIzMyAxMS43MzU1QzQuNzkyIDExLjkwNzUgNS4zODUgMTIgNiAxMkM5LjMxMzUgMTIgMTIgOS4zMTM1IDEyIDZDMTIgMi42ODY1IDkuMzEzNSAwIDYgMEMyLjY4NjUgMCAwIDIuNjg2NSAwIDZaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 4px 50% / 12px 12px no-repeat rgb(230, 0, 35) !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: none !important; -webkit-font-smoothing: antialiased !important; top: 231.333px; left: 599.067px;">Save</span><span style="border-radius: 12px; width: 24px !important; height: 24px !important; background: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMiAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iMTEiIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuOCI+PC9jaXJjbGU+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuMDgzNCA0LjU4MzMzSDEzLjMzMzRWNS43NDk5OUgxNS4wODM0QzE1LjcyNjggNS43NDk5OSAxNi4yNSA2LjI3MzI0IDE2LjI1IDYuOTE2NjZWOC42NjY2NkgxNy40MTY3VjYuOTE2NjZDMTcuNDE2NyA1LjYyOTgzIDE2LjM3MDIgNC41ODMzMyAxNS4wODM0IDQuNTgzMzNaTTE2LjI1IDE1LjA4MzNDMTYuMjUgMTUuNzI2NyAxNS43MjY4IDE2LjI1IDE1LjA4MzQgMTYuMjVIMTMuMzMzNFYxNy40MTY3SDE1LjA4MzRDMTYuMzcwMiAxNy40MTY3IDE3LjQxNjcgMTYuMzcwMiAxNy40MTY3IDE1LjA4MzNWMTMuMzMzM0gxNi4yNVYxNS4wODMzWk01Ljc1MDA0IDE1LjA4MzNWMTMuMzMzM0g0LjU4MzM3VjE1LjA4MzNDNC41ODMzNyAxNi4zNzAyIDUuNjI5ODcgMTcuNDE2NyA2LjkxNjcxIDE3LjQxNjdIOC42NjY3MVYxNi4yNUg2LjkxNjcxQzYuMjczMjkgMTYuMjUgNS43NTAwNCAxNS43MjY3IDUuNzUwMDQgMTUuMDgzM1pNNS43NTAwNCA2LjkxNjY2QzUuNzUwMDQgNi4yNzMyNCA2LjI3MzI5IDUuNzQ5OTkgNi45MTY3MSA1Ljc0OTk5SDguNjY2NzFWNC41ODMzM0g2LjkxNjcxQzUuNjI5ODcgNC41ODMzMyA0LjU4MzM3IDUuNjI5ODMgNC41ODMzNyA2LjkxNjY2VjguNjY2NjZINS43NTAwNFY2LjkxNjY2Wk05LjI1MDA0IDEwLjcwODNDOS4yNTAwNCA5LjkwNDQ5IDkuOTA0NTQgOS4yNDk5OSAxMC43MDg0IDkuMjQ5OTlDMTEuNTEyMiA5LjI0OTk5IDEyLjE2NjcgOS45MDQ0OSAxMi4xNjY3IDEwLjcwODNDMTIuMTY2NyAxMS41MTIyIDExLjUxMjIgMTIuMTY2NyAxMC43MDg0IDEyLjE2NjdDOS45MDQ1NCAxMi4xNjY3IDkuMjUwMDQgMTEuNTEyMiA5LjI1MDA0IDEwLjcwODNaTTEzLjYyNSAxNC41QzEzLjg0OSAxNC41IDE0LjA3MyAxNC40MTQ4IDE0LjI0NCAxNC4yNDM5QzE0LjU4NTIgMTMuOTAyMSAxNC41ODUyIDEzLjM0NzkgMTQuMjQ0IDEzLjAwNjFMMTMuMDcwMyAxMS44MzNDMTMuMjM0MiAxMS40OTA2IDEzLjMzMzQgMTEuMTEyNiAxMy4zMzM0IDEwLjcwODNDMTMuMzMzNCA5LjI2MTA4IDEyLjE1NTYgOC4wODMzMyAxMC43MDg0IDguMDgzMzNDOS4yNjExMiA4LjA4MzMzIDguMDgzMzcgOS4yNjEwOCA4LjA4MzM3IDEwLjcwODNDOC4wODMzNyAxMi4xNTU2IDkuMjYxMTIgMTMuMzMzMyAxMC43MDg0IDEzLjMzMzNDMTEuMTEyNiAxMy4zMzMzIDExLjQ5MDYgMTMuMjM0MiAxMS44MzMgMTMuMDcwMkwxMy4wMDYxIDE0LjI0MzlDMTMuMTc3IDE0LjQxNDggMTMuNDAxIDE0LjUgMTMuNjI1IDE0LjVaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 50% 50% / 24px 24px no-repeat rgba(0, 0, 0, 0.4) !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: none !important; top: 231.333px; left: 917.067px;"></span>
+</body>
+
+</html>
